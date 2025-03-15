@@ -1,143 +1,134 @@
-📘 Jains Aadhya - AI Real Estate Agent Project Documentation
+# 📘 Jains Aadhya - AI Real Estate Agent Project Documentation
 
-🏗️ Project Overview
+## 🏗️ Project Overview
 
-Project Name: Jains AadhyaLocation: Nookampalayam Road, ChennaiObjective: AI-powered real estate assistant, featuring SIA (a female AI chatbot) designed to assist users in exploring real estate properties interactively.
+**Project Name:** Jains Aadhya\
+**Location:** Nookampalayam Road, Chennai\
+**Objective:** AI-powered real estate assistant, featuring SIA (a female AI chatbot) designed to assist users in exploring real estate properties interactively.
 
-🔧 Tech Stack
+---
 
-Frontend: ReactJS
+## 🔧 Tech Stack
 
-Backend: Node.js, ExpressJS
+- **Frontend:** ReactJS
+- **Backend:** Node.js, ExpressJS
+- **Database:** MongoDB
+- **Microservices:** WhatsApp follow-ups, Report Generation
+- **Cloud Services:** AWS API Gateway, AWS EventBridge, AWS SQS, AWS Lambda
+- **LLM:** OpenAI API (GPT-4o)
+- **Speech-to-Text:** Deepgram, Google Cloud
+- **Text-to-Speech:** ElevenLabs, AWS Polly, Google Cloud
+- **LipSync:** AWS Polly
 
-Database: MongoDB
+---
 
-Microservices: WhatsApp follow-ups, Report Generation
+## 🚀 Features
 
-Cloud Services: AWS API Gateway, AWS EventBridge, AWS SQS, AWS Lambda
+### 🎯 Core AI Features
 
-LLM: OpenAI API (GPT-4o)
+1. **AI Chatbot (SIA):**
 
-Speech-to-Text: Deepgram, Google Cloud
+   - Interacts with users via **Speech and Text**.
+   - Supports **intent detection** using OpenAI API to guide users (e.g., site visit scheduling, cost sheet calculations).
 
-Text-to-Speech: ElevenLabs, AWS Polly, Google Cloud
+2. **Multimedia Response:**
 
-LipSync: AWS Polly
+   - Displays relevant **images and videos** based on user inquiries.
 
-🚀 Features
+3. **Speech-to-Text:**
 
-🎯 Core AI Features
+   - **Plug-and-Play** setup supporting **Deepgram** and **Google Cloud** for transcription.
 
-AI Chatbot (SIA):
+4. **Text-to-Speech:**
 
-Interacts with users via Speech and Text.
+   - Supports **ElevenLabs**, **AWS Polly**, and **Google Cloud** for dynamic text-to-voice conversion.
 
-Supports intent detection using OpenAI API to guide users (e.g., site visit scheduling, cost sheet calculations).
+5. **LipSync Animation:**
 
-Multimedia Response:
+   - Uses **AWS Polly** to sync chatbot speech with realistic lip movements.
 
-Displays relevant images and videos based on user inquiries.
+### 🔥 User Engagement Features
 
-Speech-to-Text:
+1. **Site Visit Scheduling:**
 
-Plug-and-Play setup supporting Deepgram and Google Cloud for transcription.
+   - Allows users to select preferred **date and time**.
 
-Text-to-Speech:
+2. **Cost Sheet Calculation:**
 
-Supports ElevenLabs, AWS Polly, and Google Cloud for dynamic text-to-voice conversion.
+   - Users select **floor** and **size** to get a **detailed cost breakdown**.
 
-LipSync Animation:
+3. **WhatsApp Follow-Up:**
 
-Uses AWS Polly to sync chatbot speech with realistic lip movements.
+   - Automated follow-ups via a **dedicated microservice**.
+   - AWS EventBridge manages reminders.
 
-🔥 User Engagement Features
+4. **Feedback Form:**
 
-Site Visit Scheduling:
+   - Captures user **ratings** and **comments**.
 
-Allows users to select preferred date and time.
+5. **User Intent Ranking:**
 
-Cost Sheet Calculation:
+   - Ranks users based on their engagement and behavior.
 
-Users select floor and size to get a detailed cost breakdown.
+---
 
-WhatsApp Follow-Up:
+## 🔧 Backend & Microservices
 
-Automated follow-ups via a dedicated microservice.
+### 🎯 Backend Overview
 
-AWS EventBridge manages reminders.
+- Built with **Node.js** and **ExpressJS**.
+- Manages API routes, chatbot responses, multimedia delivery, and user data handling.
+- Handles **user intents** and **triggers** actions accordingly (e.g., schedule site visit).
 
-Feedback Form:
+### 🔥 Microservices Breakdown
 
-Captures user ratings and comments.
+1. **WhatsApp Follow-Up Service:**
 
-User Intent Ranking:
+   - Triggered via AWS EventBridge.
+   - Uses **AWS SQS** and **Lambda** for message processing.
+   - Integrated with **OpenAI** for personalized responses.
 
-Ranks users based on their engagement and behavior.
+2. **Report Generation Service:**
 
-🔧 Backend & Microservices
+   - Runs every hour from **9 AM to 9 PM**.
+   - Generates **Google Sheets** reports:
+     - **Consolidated report** with all user interactions.
+     - **Session-wise report** per user.
+   - Captures user **name**, **mobile number**, **preferred configurations**, **chat history**, and **ranking**.
 
-🎯 Backend Overview
+3. **MongoDB Charts Dashboard:**
 
-Built with Node.js and ExpressJS.
+   - Visualizes data through charts, showing **engagement insights** and **conversion trends**.
 
-Manages API routes, chatbot responses, multimedia delivery, and user data handling.
+---
 
-Handles user intents and triggers actions accordingly (e.g., schedule site visit).
+## 🚀 Deployment Details
 
-🔥 Microservices Breakdown
+- **Frontend**: Deployed under **xrvizion subdomain** (VPS).
+- **Backend** and **Microservices** hosted on the same VPS.
+- **AWS services** handle follow-ups, reminders, and reporting.
 
-WhatsApp Follow-Up Service:
+---
 
-Triggered via AWS EventBridge.
+## 📌 Future Enhancements
 
-Uses AWS SQS and Lambda for message processing.
+- **Dynamic floor plan recommendations** based on user preferences.
+- **AI-driven property recommendations** (e.g., similar projects in the area).
+- **Chat history personalization** (continue where the user left off).
+- **AI-based financial planning tool** (e.g., loan calculations, EMI breakdowns).
 
-Integrated with OpenAI for personalized responses.
+---
 
-Report Generation Service:
-
-Runs every hour from 9 AM to 9 PM.
-
-Generates Google Sheets reports:
-
-Consolidated report with all user interactions.
-
-Session-wise report per user.
-
-Captures user name, mobile number, preferred configurations, chat history, and ranking.
-
-MongoDB Charts Dashboard:
-
-Visualizes data through charts, showing engagement insights and conversion trends.
-
-🚀 Deployment Details
-
-Frontend: Deployed under xrvizion subdomain (VPS).
-
-Backend and Microservices hosted on the same VPS.
-
-AWS services handle follow-ups, reminders, and reporting.
-
-📌 Future Enhancements
-
-Dynamic floor plan recommendations based on user preferences.
-
-AI-driven property recommendations (e.g., similar projects in the area).
-
-Chat history personalization (continue where the user left off).
-
-AI-based financial planning tool (e.g., loan calculations, EMI breakdowns).
-
-📘 Additional Pages
+## 📘 Additional Pages
 
 For more details:
 
-Setup Guide — Step-by-step project installation and deployment.
+- **[Setup Guide](setup_guide.md)** — Step-by-step project installation and deployment.
+- **[API Documentation](api_reference.md)** — Detailed API routes, payloads, and responses.
+- **[Microservices Breakdown](microservices.md)** — In-depth explanation of each microservice.
+- **[Report Format Guide](report_format.md)** — Explanation of report structure and data fields.
 
-API Documentation — Detailed API routes, payloads, and responses.
+---
 
-Microservices Breakdown — In-depth explanation of each microservice.
+✨ **Jains Aadhya is revolutionizing real estate sales, one AI conversation at a time.** ✨
 
-Report Format Guide — Explanation of report structure and data fields.
-
-✨ Jains Aadhya is revolutionizing real estate sales, one AI conversation at a time. ✨
